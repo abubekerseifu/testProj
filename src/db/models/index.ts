@@ -1,4 +1,4 @@
-import SequelizeConnection from "../SequelizeConnection";
+import SequelizeConnection from "../../SequelizeConnection";
 import Dog from "./dog.model";
 
 const sequelize = SequelizeConnection.getInstance();

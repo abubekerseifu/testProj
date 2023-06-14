@@ -14,19 +14,22 @@ module.exports = {
         type: Sequelize.STRING,
         unique: true
       },
-      tailLength: {
+      color: {
+        type: Sequelize.STRING,
+      },
+      tail_length: {
         type: Sequelize.INTEGER
       },
       weight: {
         type: Sequelize.INTEGER
       },
-      createdAt: {
-        allowNull: false,
+      created_at: {
+        allowNull: true,
         type: Sequelize.DATE
       },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+      updated_at: {
+        allowNull: true,
+        type: Sequelize.DATE,
       }
     });
   },
