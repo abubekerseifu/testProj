@@ -14,6 +14,8 @@ const port = process.env.PORT;
 const haltOnTimedout = (req: Request, res: Response, next: NextFunction) => {
   if (!req.timedout) {
     next();
+  }else{
+    res.status(503).send('Request timed out.');
   }
 }
 app.use(timeout('30s'));
