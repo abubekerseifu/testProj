@@ -23,7 +23,14 @@ app.use(haltOnTimedout)
 app.get('/', (req: Request, res: Response) => {
   res.send('Express Server');
 });
-app.use(routes)
+app.use(routes);
+
+//error handler
+app.use((err: Error, req: Request, res: Response, _next: NextFunction) => {
+  console.error(err.stack);
+  res.status(500).send({message: "Oops! Something went wrong on our end."});
+});
+
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
