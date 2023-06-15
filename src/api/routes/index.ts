@@ -1,11 +1,14 @@
 import { Router } from 'express'
 import * as dogController from '../controllers/dog'
 import { DogDTO } from '../dtos/dog.dto';
+import { DogSortPagination, createSortAndPagination } from '../../db/dal/types';
 
 const router = Router()
 
 router.get('/dogs', async (req, res) => {
-    const results = await dogController.getAll();
+
+    const sortAndPagination: DogSortPagination = createSortAndPagination(req.query);
+    const results = await dogController.getAll(sortAndPagination);
     return res.status(200).send(results)
 })
 
