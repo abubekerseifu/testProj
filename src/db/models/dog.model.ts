@@ -10,9 +10,9 @@ interface DogAttributes {
     updatedAt?: Date;
 }
 
-export interface DogInput extends Optional<DogAttributes, 'id'> {}
+export type DogInput = Optional<DogAttributes, 'id'>
 
-export interface DogOutput extends Required<DogAttributes> {}
+export type DogOutput = Required<DogAttributes>
 
 class Dog extends Model<DogAttributes, DogInput> implements DogAttributes {
     public id!: number;
@@ -62,6 +62,6 @@ class Dog extends Model<DogAttributes, DogInput> implements DogAttributes {
             timestamps: true,
         });
     }
-};
+}
 
 export default Dog;

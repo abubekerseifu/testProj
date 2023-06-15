@@ -1,4 +1,6 @@
-'use strict';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-undef */
+'use strict'
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -15,7 +17,7 @@ module.exports = {
         unique: true
       },
       color: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       tail_length: {
         type: Sequelize.INTEGER
@@ -29,12 +31,12 @@ module.exports = {
       },
       updated_at: {
         allowNull: true,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       }
-    });
+    })
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('dogs');
+    await queryInterface.dropTable('dogs')
   }
-};
+}

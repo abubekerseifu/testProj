@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable no-undef */
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */

@@ -1,4 +1,6 @@
-require('dotenv').config();
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
+require('dotenv').config()
 
 const config = {
   development: {
@@ -22,6 +24,6 @@ const config = {
     host: process.env.DB_HOST,
     dialect: process.env.DB_DIALECT
   }
-};
+}
 
-module.exports = config;
+module.exports = config
