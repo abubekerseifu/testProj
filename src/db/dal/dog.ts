@@ -21,3 +21,8 @@ export const getAll = async (query: DogSortPagination): Promise<DogOutput[]> => 
     };
     return db.Dog.findAll(options as any);
 }
+
+export const checkNameUniqueness = async (name: string): Promise<boolean> => {
+    const dog = await db.Dog.findOne({ where:{ name }});
+    return !dog
+}
